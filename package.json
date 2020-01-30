@@ -1,0 +1,46 @@
+{
+  "name": "react-native-gesture-bottom-sheet",
+  "version": "1.0.0",
+  "description": "A simple and easy to use bottom sheet component with drag gestures for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kcotias/react-native-bottom-sheet.git"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "react",
+    "native",
+    "native",
+    "mobile",
+    "action-sheet",
+    "actionsheet",
+    "bottom",
+    "bottom-sheet",
+    "bottomsheet",
+    "panel",
+    "drag",
+    "gesture",
+    "draggable",
+    "react-native-bottom",
+    "react-native-bottom-sheet",
+    "react-native-component",
+    "react-native-gesture",
+    "ios",
+    "android",
+    "ui"
+  ],
+  "author": "Kaian Cotias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kcotias/react-native-bottom-sheet/issues"
+  },
+  "homepage": "https://github.com/kcotias/react-native-bottom-sheet#readme",
+  "devDependencies": {
+    "metro-react-native-babel-preset": "^0.56.4"
+  }
+}
