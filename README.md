@@ -27,7 +27,7 @@ yarn add react-native-gesture-bottom-sheet
 ```js
 import React, {useRef} from 'react';
 import {SafeAreaView, TouchableOpacity, Text, StyleSheet} from 'react-native';
-import BottomSheet from 'react-native-bottom-sheet';
+import BottomSheet from 'react-native-gesture-bottom-sheet';
 import styles from './styles';
 
 const Example = () => {
