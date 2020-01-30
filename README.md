@@ -6,7 +6,7 @@ A cross-platform Bottom Sheet component which supports gestures.
 
 ![](bottom-sheet.gif)
 
-- Checkout the [example/](https://github.com/kcotias/react-native-gesture-bottom-sheet/example) folder for use example.
+- Checkout the [example/](https://github.com/kcotias/react-native-gesture-bottom-sheet/tree/master/examples) folder for use example.
 
 ## Features
 
