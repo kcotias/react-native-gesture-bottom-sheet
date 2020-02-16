@@ -9,7 +9,7 @@ const Example = () => {
     <SafeAreaView style={styles.container}>
       <BottomSheet hasDraggableIcon ref={bottomSheet} height={350}>
         <View>
-          <Text>Teste</Text>
+          <Text>Test</Text>
         </View>
       </BottomSheet>
       <TouchableOpacity
