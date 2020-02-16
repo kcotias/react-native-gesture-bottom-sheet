@@ -1,5 +1,5 @@
-import React, {useRef} from 'react';
-import {SafeAreaView, TouchableOpacity, Text, View} from 'react-native';
+import React, { useRef } from 'react';
+import { SafeAreaView, TouchableOpacity, Text, View } from 'react-native';
 import BottomSheet from 'react-native-gesture-bottom-sheet';
 import styles from './styles';
 

@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   button: {
@@ -12,18 +12,18 @@ export default StyleSheet.create({
     shadowOpacity: 0.7,
     shadowOffset: {
       height: 4,
-      width: 4,
+      width: 4
     },
     shadowRadius: 5,
-    elevation: 6,
+    elevation: 6
   },
   text: {
     color: 'white',
-    fontWeight: '600',
+    fontWeight: '600'
   },
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-  },
+    alignItems: 'center'
+  }
 });
