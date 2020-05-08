@@ -87,3 +87,6 @@ Sets the panel size.
 ##### `hasDraggableIcon` - boolean (`Default - false`)
 
 Controls visibility of the draggable icon on top of the modal.
+
+##### `draggable` - boolean (`Default - true`)
+Specify whether the panel is draggable or not.
