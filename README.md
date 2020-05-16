@@ -90,3 +90,6 @@ Controls visibility of the draggable icon on top of the modal.
 
 ##### `draggable` - boolean (`Default - true`)
 Specify whether the panel is draggable or not.
+
+##### `modal` - boolean (`Default - true`)
+Specify whether the panel is implemented as modal or not.
