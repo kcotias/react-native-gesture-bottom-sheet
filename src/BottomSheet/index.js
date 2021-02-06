@@ -51,21 +51,19 @@ class BottomSheet extends Component {
   }
 
   createPanResponder(props) {
-    const { height,
-      draggable = true 
-    } = props;
+    const { height } = props;
     const { pan } = this.state;
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onPanResponderMove: (e, gestureState) => {
-        if (draggable && gestureState.dy > 0) {
+        if (gestureState.dy > 0) {
           Animated.event([null, { dy: pan.y }])(e, gestureState);
         }
       },
       onPanResponderRelease: (e, gestureState) => {
         const gestureLimitArea = height / 3;
         const gestureDistance = gestureState.dy;
-        if (draggable && gestureDistance > gestureLimitArea) {
+        if (gestureDistance > gestureLimitArea) {
           this.setModalVisible(false);
         } else {
           Animated.spring(pan, { toValue: { x: 0, y: 0 } }).start();
