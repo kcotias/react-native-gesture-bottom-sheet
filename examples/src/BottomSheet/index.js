@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   View,
   Modal,
   TouchableOpacity,
   Animated,
-  PanResponder,
-} from "react-native";
-import styles from "./styles";
+  PanResponder
+} from 'react-native';
+import styles from './styles';
 
 class BottomSheet extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class BottomSheet extends Component {
     this.state = {
       modalVisible: false,
       animatedHeight: new Animated.Value(0),
-      pan: new Animated.ValueXY(),
+      pan: new Animated.ValueXY()
     };
 
     this.createPanResponder(props);
@@ -28,20 +28,20 @@ class BottomSheet extends Component {
       Animated.timing(animatedHeight, {
         toValue: height,
         duration: 300,
-        useNativeDriver: false,
+        useNativeDriver: false
       }).start();
     } else {
       Animated.timing(animatedHeight, {
         toValue: 0,
         duration: 400,
-        useNativeDriver: false,
+        useNativeDriver: false
       }).start(() => {
         pan.setValue({ x: 0, y: 0 });
         this.setState({
           modalVisible: visible,
-          animatedHeight: new Animated.Value(0),
+          animatedHeight: new Animated.Value(0)
         });
-        if (typeof closeFunction === "function") closeFunction();
+        if (typeof closeFunction === 'function') closeFunction();
       });
     }
   }
@@ -64,7 +64,7 @@ class BottomSheet extends Component {
         } else {
           Animated.spring(pan, { toValue: { x: 0, y: 0 } }).start();
         }
-      },
+      }
     });
   }
 
@@ -82,42 +82,39 @@ class BottomSheet extends Component {
       hasDraggableIcon,
       backgroundColor,
       dragIconColor,
-      draggable = true,
+      draggable = true
     } = this.props;
     const { animatedHeight, pan, modalVisible } = this.state;
     const panStyle = {
-      transform: pan.getTranslateTransform(),
+      transform: pan.getTranslateTransform()
     };
 
     return (
       <Modal
         transparent
         visible={modalVisible}
-        onRequestClose={() => this.setModalVisible(false)}
-      >
+        onRequestClose={() => this.setModalVisible(false)}>
         <View
           style={[
             styles.wrapper,
-            { backgroundColor: backgroundColor || "#25252599" },
-          ]}
-        >
+            { backgroundColor: backgroundColor || '#25252599' }
+          ]}>
           <TouchableOpacity
             style={styles.background}
             activeOpacity={1}
             onPress={() => this.close()}
           />
           <Animated.View
-            {...(draggable && this.panResponder.panHandlers)}
-            style={[panStyle, styles.container, { height: animatedHeight }]}
-          >
+            {...draggable && this.panResponder.panHandlers}
+            style={[panStyle, styles.container, { height: animatedHeight }]}>
             {hasDraggableIcon && (
               <View style={styles.draggableContainer}>
                 <View
                   style={[
                     styles.draggableIcon,
                     {
-                      backgroundColor: dragIconColor || "#A3A3A3",
-                    },
+                      backgroundColor: dragIconColor || '#A3A3A3'
+                    }
                   ]}
                 />
               </View>
