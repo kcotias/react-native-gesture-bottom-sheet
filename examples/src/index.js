@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { SafeAreaView, TouchableOpacity, Text, View } from 'react-native';
-import BottomSheet from './BottomSheet';
+import BottomSheet from 'react-native-gesture-bottom-sheet';
 import styles from './styles';
 
 const Example = () => {
@@ -8,7 +8,7 @@ const Example = () => {
   return (
     <SafeAreaView style={styles.container}>
       <BottomSheet
-        draggable={true}
+        draggable={false}
         hasDraggableIcon
         ref={bottomSheet}
         height={350}>
