@@ -1,6 +1,12 @@
-import React, { Component } from 'react';
-import { View, Modal, TouchableOpacity, Animated, PanResponder } from 'react-native';
-import styles from './styles';
+import React, { Component } from "react";
+import {
+  View,
+  Modal,
+  TouchableOpacity,
+  Animated,
+  PanResponder,
+} from "react-native";
+import styles from "./styles";
 
 class BottomSheet extends Component {
   constructor(props) {
@@ -35,7 +41,7 @@ class BottomSheet extends Component {
           modalVisible: visible,
           animatedHeight: new Animated.Value(0),
         });
-        if (typeof closeFunction === 'function') closeFunction();
+        if (typeof closeFunction === "function") closeFunction();
       });
     }
   }
@@ -71,7 +77,15 @@ class BottomSheet extends Component {
   }
 
   render() {
-    const { children, hasDraggableIcon, backgroundColor, dragIconColor, draggable = true, onRequestClose } = this.props;
+    const {
+      children,
+      hasDraggableIcon,
+      backgroundColor,
+      dragIconColor,
+      draggable = true,
+      onRequestClose,
+      radius,
+    } = this.props;
     const { animatedHeight, pan, modalVisible } = this.state;
     const panStyle = {
       transform: pan.getTranslateTransform(),
@@ -79,11 +93,28 @@ class BottomSheet extends Component {
 
     return (
       <Modal transparent visible={modalVisible} onRequestClose={onRequestClose}>
-        <View style={[styles.wrapper, { backgroundColor: backgroundColor || '#25252599' }]}>
-          <TouchableOpacity style={styles.background} activeOpacity={1} onPress={() => this.close()} />
+        <View
+          style={[
+            styles.wrapper,
+            { backgroundColor: backgroundColor || "#25252599" },
+          ]}
+        >
+          <TouchableOpacity
+            style={styles.background}
+            activeOpacity={1}
+            onPress={() => this.close()}
+          />
           <Animated.View
             {...(draggable && this.panResponder.panHandlers)}
-            style={[panStyle, styles.container, { height: animatedHeight }]}
+            style={[
+              panStyle,
+              styles.container,
+              {
+                height: animatedHeight,
+                borderTopRightRadius: radius || 10,
+                borderTopLeftRadius: radius || 10,
+              },
+            ]}
           >
             {hasDraggableIcon && (
               <View style={styles.draggableContainer}>
@@ -91,7 +122,7 @@ class BottomSheet extends Component {
                   style={[
                     styles.draggableIcon,
                     {
-                      backgroundColor: dragIconColor || '#A3A3A3',
+                      backgroundColor: dragIconColor || "#A3A3A3",
                     },
                   ]}
                 />

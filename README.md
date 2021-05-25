@@ -59,20 +59,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.7,
     shadowOffset: {
       height: 4,
-      width: 4
+      width: 4,
     },
     shadowRadius: 5,
-    elevation: 6
+    elevation: 6,
   },
   text: {
     color: "white",
-    fontWeight: "600"
+    fontWeight: "600",
   },
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });
 
 export default Example;
@@ -84,9 +84,14 @@ export default Example;
 
 Sets the panel size.
 
+##### `radius` - integer (`Default - 10`)
+
+Sets the radius of the top borders.
+
 ##### `hasDraggableIcon` - boolean (`Default - false`)
 
 Controls visibility of the draggable icon on top of the modal.
 
 ##### `draggable` - boolean (`Default - true`)
+
 Specify whether the panel is draggable or not.
