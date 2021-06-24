@@ -79,19 +79,11 @@ export default Example;
 ```
 
 ### Props
-
-##### `height` - integer (`required`)
-
-Sets the panel size.
-
-##### `radius` - integer (`Default - 10`)
-
-Sets the radius of the top borders.
-
-##### `hasDraggableIcon` - boolean (`Default - false`)
-
-Controls visibility of the draggable icon on top of the modal.
-
-##### `draggable` - boolean (`Default - true`)
-
-Specify whether the panel is draggable or not.
+| name                      | required | default | Type    | description |
+| ------------------------- | -------- | ----------| --------| ------------|
+| height                    | Yes      |           | integer | Determines the panel size.|
+| radius                    | No       | 10        | integer | Determines the radius of the top borders.|
+| hasDraggableIcon          | No       | false     | boolean | Controls visibility of the draggable icon on top of the modal.|
+| draggable                 | No       | true      | boolean | Specify whether the panel is draggable or not.|
+| backgroundColor           | No       |`#25252599`| string  | Change the color of the overlay.|    
+| sheetBackgroundColor      | No       |`#F3F3F3`  | string  | Change the background of the panel.|    
