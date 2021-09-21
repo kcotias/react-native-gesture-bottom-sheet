@@ -87,6 +87,7 @@ class BottomSheet extends Component {
       dragIconColor,
       draggable = true,
       onRequestClose,
+      onClose = this.close(),
       radius,
     } = this.props;
     const { animatedHeight, pan, modalVisible } = this.state;
@@ -95,47 +96,47 @@ class BottomSheet extends Component {
     };
 
     return (
-        <Modal transparent visible={modalVisible} onRequestClose={onRequestClose}>
-          <View
-              style={[
-                styles.wrapper,
-                { backgroundColor: backgroundColor || "#25252599" },
-              ]}
+      <Modal transparent visible={modalVisible} onRequestClose={onRequestClose}>
+        <View
+          style={[
+            styles.wrapper,
+            { backgroundColor: backgroundColor || "#25252599" },
+          ]}
+        >
+          <TouchableOpacity
+            style={styles.background}
+            activeOpacity={1}
+            onPress={onClose}
+          />
+          <Animated.View
+            {...(draggable && this.panResponder.panHandlers)}
+            style={[
+              panStyle,
+              styles.container,
+              {
+                height: animatedHeight,
+                borderTopRightRadius: radius || 10,
+                borderTopLeftRadius: radius || 10,
+                backgroundColor: sheetBackgroundColor || "#F3F3F3",
+              },
+            ]}
           >
-            <TouchableOpacity
-                style={styles.background}
-                activeOpacity={1}
-                onPress={() => this.close()}
-            />
-            <Animated.View
-                {...(draggable && this.panResponder.panHandlers)}
-                style={[
-                  panStyle,
-                  styles.container,
-                  {
-                    height: animatedHeight,
-                    borderTopRightRadius: radius || 10,
-                    borderTopLeftRadius: radius || 10,
-                    backgroundColor: sheetBackgroundColor || "#F3F3F3",
-                  },
-                ]}
-            >
-              {hasDraggableIcon && (
-                  <View style={styles.draggableContainer}>
-                    <View
-                        style={[
-                          styles.draggableIcon,
-                          {
-                            backgroundColor: dragIconColor || "#A3A3A3",
-                          },
-                        ]}
-                    />
-                  </View>
-              )}
-              {children}
-            </Animated.View>
-          </View>
-        </Modal>
+            {hasDraggableIcon && (
+              <View style={styles.draggableContainer}>
+                <View
+                  style={[
+                    styles.draggableIcon,
+                    {
+                      backgroundColor: dragIconColor || "#A3A3A3",
+                    },
+                  ]}
+                />
+              </View>
+            )}
+            {children}
+          </Animated.View>
+        </View>
+      </Modal>
     );
   }
 }
