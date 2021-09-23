@@ -88,6 +88,7 @@ class BottomSheet extends Component {
       dragIconStyle,
       draggable = true,
       onRequestClose,
+      onClose = this.close(),
       radius,
     } = this.props;
     const { animatedHeight, pan, modalVisible } = this.state;
@@ -106,7 +107,7 @@ class BottomSheet extends Component {
           <TouchableOpacity
             style={styles.background}
             activeOpacity={1}
-            onPress={() => this.close()}
+            onPress={onClose}
           />
           <Animated.View
             {...(draggable && this.panResponder.panHandlers)}
