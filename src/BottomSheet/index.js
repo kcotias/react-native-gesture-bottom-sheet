@@ -85,6 +85,7 @@ class BottomSheet extends Component {
       backgroundColor,
       sheetBackgroundColor,
       dragIconColor,
+      dragIconStyle,
       draggable = true,
       onRequestClose,
       onClose = this.close(),
@@ -126,6 +127,7 @@ class BottomSheet extends Component {
                 <View
                   style={[
                     styles.draggableIcon,
+                    dragIconStyle,
                     {
                       backgroundColor: dragIconColor || "#A3A3A3",
                     },
