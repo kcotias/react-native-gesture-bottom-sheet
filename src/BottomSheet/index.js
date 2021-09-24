@@ -88,7 +88,7 @@ class BottomSheet extends Component {
       dragIconStyle,
       draggable = true,
       onRequestClose,
-      onClose = this.close(),
+      onClose = () => this.close(),
       radius,
     } = this.props;
     const { animatedHeight, pan, modalVisible } = this.state;
