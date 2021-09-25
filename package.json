@@ -1,6 +1,6 @@
 {
   "name": "react-native-gesture-bottom-sheet",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A simple and easy to use bottom sheet component with drag gestures for React Native",
   "main": "index.js",
   "scripts": {
