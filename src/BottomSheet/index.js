@@ -64,7 +64,7 @@ class BottomSheet extends Component {
         if (gestureDistance > gestureLimitArea) {
           this.setModalVisible(false);
         } else {
-          Animated.spring(pan, { toValue: { x: 0, y: 0 } }).start();
+          Animated.spring(pan, { toValue: { x: 0, y: 0 }, useNativeDriver: false, }).start();
         }
       },
     });
