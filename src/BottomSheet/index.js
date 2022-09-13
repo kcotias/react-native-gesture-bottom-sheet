@@ -81,7 +81,12 @@ class BottomSheet extends Component {
   }
 
   setHeight(height) {
-    this.setState({ animatedHeight: new Animated.Value(height) });
+    Animated.timing(this.state.animatedHeight, {
+      toValue: height,
+      duration: 300,
+      useNativeDriver: false,
+      easing: this.props.easing,
+    }).start();
   }
 
   render() {
