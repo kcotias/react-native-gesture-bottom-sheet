@@ -35,7 +35,14 @@ const Example = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <BottomSheet hasDraggableIcon ref={bottomSheet} height={600} />
+      <BottomSheet 
+      hasDraggableIcon
+      ref={bottomSheet}
+      height={600}
+      onRequestClose={() => {
+          bottomSheet.current.close();
+        }}
+      />
       <TouchableOpacity
         style={styles.button}
         onPress={() => bottomSheet.current.show()}
@@ -82,6 +89,7 @@ export default Example;
 | ------------------------- | -------- | ----------| --------| ------------|
 | height                    | Yes      |           | integer | Determines the panel size.|
 | radius                    | No       | 10        | integer | Determines the radius of the top borders.|
+| onRequestClose          | No       |      | function | Function to callback while requesting bottom-sheet to close|
 | hasDraggableIcon          | No       | false     | boolean | Controls visibility of the draggable icon on top of the modal.|
 | draggable                 | No       | true      | boolean | Specify whether the panel is draggable or not.|
 | backgroundColor           | No       |`#25252599`| string  | Change the color of the overlay.|    
