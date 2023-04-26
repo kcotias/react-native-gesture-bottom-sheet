@@ -78,6 +78,10 @@ class BottomSheet extends Component {
     this.setModalVisible(false);
   }
 
+  setHeight(h) {
+    this.setState({ animatedHeight: new Animated.Value(h) });
+  }
+
   render() {
     const {
       children,
