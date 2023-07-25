@@ -21,7 +21,7 @@ class BottomSheet extends Component {
   }
 
   setModalVisible(visible) {
-    const { closeFunction, height } = this.props;
+    const { closeFunction, easing, height } = this.props;
     const { animatedHeight, pan } = this.state;
     if (visible) {
       this.setState({ modalVisible: visible });
@@ -29,12 +29,14 @@ class BottomSheet extends Component {
         toValue: height,
         duration: 300,
         useNativeDriver: false,
+        easing,
       }).start();
     } else {
       Animated.timing(animatedHeight, {
         toValue: 0,
         duration: 400,
         useNativeDriver: false,
+        easing,
       }).start(() => {
         pan.setValue({ x: 0, y: 0 });
         this.setState({
@@ -76,6 +78,15 @@ class BottomSheet extends Component {
 
   close() {
     this.setModalVisible(false);
+  }
+
+  setHeight(height) {
+    Animated.timing(this.state.animatedHeight, {
+      toValue: height,
+      duration: 300,
+      useNativeDriver: false,
+      easing: this.props.easing,
+    }).start();
   }
 
   render() {

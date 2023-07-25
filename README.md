@@ -92,5 +92,10 @@ export default Example;
 | onRequestClose          | No       |      | function | Function to callback while requesting bottom-sheet to close|
 | hasDraggableIcon          | No       | false     | boolean | Controls visibility of the draggable icon on top of the modal.|
 | draggable                 | No       | true      | boolean | Specify whether the panel is draggable or not.|
+| dragIconColor             | No       | `#A3A3A3` | string  | Drag icon background color.|
+| dragIconStyle             | No       |           | style   | Drag icon style.|
 | backgroundColor           | No       |`#25252599`| string  | Change the color of the overlay.|    
 | sheetBackgroundColor      | No       |`#F3F3F3`  | string  | Change the background of the panel.|    
+| closeFunction             | No       |           | function  | Function to be called when close animation finishes.|    
+| easing                    | No       |           | [Easing](https://reactnative.dev/docs/easing)  | Modal animation open/close easing.|    
+| onRequestClose            | No       |           | function  | Modal [onRequestClose](https://reactnative.dev/docs/modal#onrequestclose) property.|    

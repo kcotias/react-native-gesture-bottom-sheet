@@ -1,8 +1,9 @@
 import { Component } from 'react';
-import { Animated, StyleProp, ViewStyle } from 'react-native';
+import { Animated, Easing, StyleProp, ViewStyle } from 'react-native';
 export interface BottomSheetProps {
   height: number;
   closeFunction?: () => void;
+  easing?: Easing;
   hasDraggableIcon?: boolean;
   backgroundColor?: string;
   sheetBackgroundColor?: string;
@@ -28,6 +29,7 @@ declare class BottomSheet extends Component<
   createPanResponder(props: { height: number }): void;
   show(): void;
   close(): void;
+  setHeight(height: number): void;
   render(): JSX.Element;
 }
 export default BottomSheet;
